@@ -1,4 +1,6 @@
 import React from "react"
+import { NavBar } from "../nav/NavBar.js"
+import { ApplicationViews } from "../ApplicationViews.js"
 import { AnimalCard } from "../animal/AnimalCard.js"
 import { LocationCard } from "../locations/Location.js"
 import { EmployeeCard } from "../employees/Employee.js"
@@ -19,6 +21,8 @@ const KennelCard = (kennels) => (
 export const Kennel = () => (
     <>
     {/* {console.log("animals", animals[0])} */}
+    <NavBar />
+        <ApplicationViews />
     <PropsAndState yourName={"Brenda"} />
     <h2>Nashville Kennels</h2>
         <small>Loving care when you're not there.</small>
