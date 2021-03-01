@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Kennel } from "./components/Kennel"
+import { Kennel } from "./components/kennels/Kennel"
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
