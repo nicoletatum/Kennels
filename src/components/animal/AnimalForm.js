@@ -30,7 +30,7 @@ export const AnimalForm = () => {
     and locations state on initialization, so we can provide their data in the form dropdowns
     */
     useEffect(() => {
-      getCustomers().then(getLocations)
+        getCustomers().then(getLocations)
     }, [])
 
     //when a field changes, update state. The return will re-render and display based on the values in state
