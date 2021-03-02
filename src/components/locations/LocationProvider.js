@@ -1,27 +1,27 @@
 import React, { useState, createContext } from "react"
 
 // The context is imported and used by individual components that need data
-export const KennelContext = createContext()
+export const LocationContext = createContext()
 
 // This component establishes what data can be used.
-export const KennelProvider = (props) => {
-    const [kennels, setKennels] = useState([])
+export const LocationProvider = (props) => {
+    const [locations, setLocations] = useState([])
 
-    const getKennels = () => {
-        return fetch("http://localhost:8088/kennels?_expand=address")
+    const getLocations = () => {
+        return fetch("http://localhost:8088/locations?_expand=address")
         .then(res => res.json())
-        .then(setKennels)
+        .then(setLocations)
     }
 
-    const addKennel = kennelObj => {
-        return fetch("http://localhost:8088/kennels", {
+    const addLocation = locationObj => {
+        return fetch("http://localhost:8088/locations", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(kennelObj)
+            body: JSON.stringify(locationObj)
         })
-        .then(getKennels)
+        .then(getLocations)
     }
 
     /*
@@ -31,10 +31,10 @@ export const KennelProvider = (props) => {
         allows any child elements to access them.
     */
     return (
-        <KennelContext.Provider value={{
-            kennels, getKennels, addKennel
+        <LocationContext.Provider value={{
+            locations, getLocations, addLocation
         }}>
             {props.children}
-        </KennelContext.Provider>
+        </LocationContext.Provider>
     )
 }

@@ -1,26 +1,26 @@
 import React, { useContext, useEffect } from "react"
-import { CustomerContext } from "./CustomerProvider"
+import { LocationContext } from "./LocationProvider"
 import { LocationCard } from "./LocationCard"
-import "./Customer.css"
+import "./Location.css"
 
-export const CustomerList = () => {
+export const LocationList = () => {
   // This state changes when `getAnimals()` is invoked below
-    const { customers, getCustomers } = useContext(CustomerContext)
+    const { locations, getLocations } = useContext(LocationContext)
 
   //useEffect - reach out to the world for something
     useEffect(() => {
-    console.log("CustomersList: useEffect - getCustomers")
-    getCustomers()
+    console.log("LocationsList: useEffect - getLocations")
+    getLocations()
 
     }, [])
 
     //.map iterates the array of animals -> html by invoking animalCard function
     return (
-    <div className="customers">
-        {console.log("CustomerList: Render", customers)}
+    <div className="locations">
+        {console.log("LocationList: Render", locations)}
         {
-        customers.map(customer => {
-            return <CustomerCard key={customer.id} customer={customer} />
+        locations.map(location => {
+            return <LocationCard key={location.id} location={location} />
         })
         }
     </div>
