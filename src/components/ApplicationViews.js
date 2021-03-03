@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 // import { AnimalCard } from "./animal/AnimalCard"
 import { AnimalProvider } from "./animal/AnimalProvider"
+import { AnimalDetail } from "./animal/AnimalDetail"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalList } from "./animal/AnimalList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
@@ -29,6 +30,10 @@ export const ApplicationViews = () => {
                         </Route>
                         <Route path="/animals/create">
                             <AnimalForm />
+                        </Route>
+                {/* all seperate perameters seperated by slashes  */}
+                        <Route exact path="/animals/detail/:animalId(\d+)">
+                            <AnimalDetail />
                         </Route>
                     </CustomerProvider>
                 </LocationProvider>

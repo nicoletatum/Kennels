@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from "../location/LocationProvider"
-import { EmployeeContext } from "./EmployeeProvider"
+import { EmployeeContext } from "../employee/EmployeeProvider"
 import "./Employee.css"
 import { useHistory } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ export const EmployeeForm = () => {
     */
 
     const [employee, setEmployees] = useState({
-        name: "",
+        name: "",  
         locationId: 0
     });
 
@@ -26,7 +26,6 @@ export const EmployeeForm = () => {
     */
     useEffect(() => {
         getLocations()
-        console.log(getLocations)
     }, [])
 
     //when a field changes, update state. The return will re-render and display based on the values in state
