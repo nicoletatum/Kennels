@@ -26,6 +26,7 @@ export const EmployeeForm = () => {
     */
     useEffect(() => {
         getLocations()
+        console.log(getLocations)
     }, [])
 
     //when a field changes, update state. The return will re-render and display based on the values in state
