@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router } from "react-router-dom";
-import { Kennel } from "./components/kennels/Kennel"
+import { Kennel } from "./components/kennel/Kennel.js"
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
