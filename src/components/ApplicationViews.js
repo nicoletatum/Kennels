@@ -6,11 +6,15 @@ import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalDetail } from "./animal/AnimalDetail"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalList } from "./animal/AnimalList"
+
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
+import { EmployeeDetail } from "./employee/EmployeeDetail"
+
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
+
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
 import { LocationForm } from "./location/locationForm"
@@ -48,6 +52,9 @@ export const ApplicationViews = () => {
                     <Route path="/employees/create">
                         <EmployeeForm />
                     </Route>
+                    <Route exact path="/employees/detail/:employeeId(\d+)">
+		                <EmployeeDetail />
+	                </Route>
                 </LocationProvider>
             </EmployeeProvider>
 

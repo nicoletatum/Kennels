@@ -60,6 +60,7 @@ export const EmployeeForm = () => {
             //once complete, change the url and display the animal list
             addEmployee(employee)
                 .then(() => history.push("/employees"))
+                console.log("test")
         }
     }
 
