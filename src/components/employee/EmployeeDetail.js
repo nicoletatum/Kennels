@@ -20,14 +20,6 @@ export const EmployeeDetail = () => {
             })
     }, [])
 
-    // const handleRelease = () => {
-    //     releaseAnimal(animal.id)
-    //         .then(() => {
-    //             history.push("/animals")
-    //         }
-
-    //         )
-    // }
 
     return (
         <section className="employee">

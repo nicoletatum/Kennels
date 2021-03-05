@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
+import { LocationCard } from "./LocationCard"
 import { LocationContext } from "./LocationProvider"
 import { useHistory } from "react-router-dom" // import from libraries before your local modules
-import { LocationCard } from "./LocationCard"
 import "./Location.css"
 
 export const LocationList = () => {
@@ -10,11 +10,9 @@ export const LocationList = () => {
 
   const history = useHistory()
 
-  //useEffect - reach out to the world for something
   useEffect(() => {
     console.log("LocationsList: useEffect - getLocations")
     getLocations()
-
   }, [])
 
   //.map iterates the array of animals -> html by invoking animalCard function
@@ -25,7 +23,12 @@ export const LocationList = () => {
           </button>
       {
         locations.map(location => {
-          return <LocationCard key={location.id} location={location} />
+      
+          return <LocationCard key={location.id} 
+                                    location={location} 
+                                    // employee={employee}
+                                    // animal={animal}
+                                    />
         })
       }
     </div>

@@ -4,11 +4,10 @@ import "./Animal.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const AnimalDetail = () => {
-    const { getAnimalById } = useContext(AnimalContext)
+    const { getAnimalById, releaseAnimal } = useContext(AnimalContext)
 
     const [animal, setAnimal] = useState({})
 
-    //this hook gives us object 
     const { animalId } = useParams();
     const history = useHistory();
 
@@ -20,14 +19,12 @@ export const AnimalDetail = () => {
             })
     }, [])
 
-    // const handleRelease = () => {
-    //     releaseAnimal(animal.id)
-    //         .then(() => {
-    //             history.push("/animals")
-    //         }
-
-    //         )
-    // }
+    const handleRelease = () => {
+        releaseAnimal(animal.id)
+            .then(() => {
+                history.push("/animals")
+            })
+    }
 
     return (
         <section className="animal">
@@ -36,6 +33,7 @@ export const AnimalDetail = () => {
             {/* What's up with the question mark???? optional Chanining*/}
             <div className="animal__location">Location: {animal.location?.name}</div>
             <div className="animal__owner">Customer: {animal.customer?.name}</div>
+            <button onClick={handleRelease}>Release Animal</button>
         </section>
     )
 }
